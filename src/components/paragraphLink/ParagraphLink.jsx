@@ -1,3 +1,7 @@
+// Importar hojas de estilos
+import '../../styles/paragraphLink/paragraph-link.css';
+import PropTypes from 'prop-types';
+
 // Props: Comunican los componentes padres con los componentes hijos.
 
 const ParagraphLink = ( {href, color, children} ) => { // clave: "valor" , href: "valor"
@@ -7,7 +11,9 @@ const ParagraphLink = ( {href, color, children} ) => { // clave: "valor" , href:
     const myParagraph = (
      <>
         <a
-        style = {  { textDecoration: 'none', color: color  }  } 
+        className = 'color-anchor'
+        style = {  { color: color  }  } 
+        id = 'anchor-paragraph'
         href = { href }
         target = '_blank'
         >
@@ -18,6 +24,10 @@ const ParagraphLink = ( {href, color, children} ) => { // clave: "valor" , href:
 
     return myParagraph;
 };
+
+ParagraphLink.propTypes = {
+    href: PropTypes.string.isRequired
+}
 
 export default ParagraphLink; // exportacion por default.
 
